@@ -43,7 +43,7 @@ c.plugins = pm
 
 # logging
 log_name = os.path.join(base_dir, 'logs', "%s.xml" % time.strftime("%Y-%m-%d-%M-%S"))
-sys.argv.extend(['--with-xunit', '--xunit-file', log_name])
+sys.argv.extend(['--nologcapture','--with-xunit', '--xunit-file', log_name])
 nose.core.run(config = c)
 
 shutil.copy(log_name, os.path.join(base_dir, 'logs', 'latest.xml'))

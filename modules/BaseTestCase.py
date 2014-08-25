@@ -21,7 +21,7 @@ class BaseTestCase(unittest.TestCase):
         """
         self.verificationErrors = []
         self.driver = webdriver.Firefox()
-        self.base_url = "http://www.google.com"
+        self.base_url = "https://www.mozilla.org/en-US/"
         self.driver.get(self.base_url)
         
 

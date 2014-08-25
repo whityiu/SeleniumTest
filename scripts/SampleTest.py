@@ -19,30 +19,30 @@ class SampleTest(BaseTestCase.BaseTestCase):
         driver = self.driver
         driver.get("Http://www.python.org")
         bodyTag = driver.find_element_by_tag_name("body")
-        self.assertEqual("homepage", bodyTag.get_attribute("id"))
+        self.verifyEqual("homepage", bodyTag.get_attribute("id"))
     
     @attr(tags=['deep', 'dashboard', 'python'])    
     def FailedTest(self):
         driver = self.driver
         driver.get("Http://www.python.org")
         bodyTag = driver.find_element_by_tag_name("body")
-        self.assertEqual("notarealid", bodyTag.get_attribute("id"))
+        self.verifyEqual("notarealid", bodyTag.get_attribute("id"))
 
     @attr(tags=['deep', 'dashboard', 'python'])    
     def SearchBoxTest(self):
         driver = self.driver
         driver.get("Http://www.python.org")
         searchBox = driver.find_element_by_id("id-search-field")
-        self.assertEqual("search", searchBox.get_attribute("type"))
+        self.verifyEqual("search", searchBox.get_attribute("type"))
         
     @attr(tags=['deep', 'dashboard', 'python'])    
     def FailedSearchBoxTest(self):
         driver = self.driver
         driver.get("Http://www.python.org")
         searchBox = driver.find_element_by_id("id-search-field")
-        self.assertEqual("input", searchBox.get_attribute("type"))
+        self.verifyEqual("input", searchBox.get_attribute("type"))
         
-    @attr(tags=['deep', 'dashboard', 'python'])    
+    @attr(tags=['deep', 'dashboard', 'python', 'ex'])    
     def CustomExceptionTest(self):
         driver = self.driver
         driver.get("Http://www.python.org")
