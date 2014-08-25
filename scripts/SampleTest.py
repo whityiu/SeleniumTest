@@ -1,5 +1,5 @@
 import BaseTestCase
-
+from BaseException import ElementNotPresentException
 from selenium import webdriver
 
 from nose.plugins.attrib import attr
@@ -41,3 +41,9 @@ class SampleTest(BaseTestCase.BaseTestCase):
         driver.get("Http://www.python.org")
         searchBox = driver.find_element_by_id("id-search-field")
         self.assertEqual("input", searchBox.get_attribute("type"))
+        
+    @attr(tags=['deep', 'dashboard', 'python'])    
+    def CustomExceptionTest(self):
+        driver = self.driver
+        driver.get("Http://www.python.org")
+        raise ElementNotPresentException("Exception - Element is not present")

@@ -2,42 +2,42 @@ class BaseException(Exception):
     """Base class for exceptions in this module."""
     pass
 
-class NoAppropriateProject(TNCException):
+class NoAppropriateProject(BaseException):
     def _get_message(self): 
         return self._message
     def _set_message(self, message): 
         self._message = message
     message = property(_get_message, _set_message)
 
-class ElementVisiblityTimeout(TNCException):
+class ElementVisiblityTimeout(BaseException):
     def _get_message(self): 
         return self._message
     def _set_message(self, message): 
         self._message = message
     message = property(_get_message, _set_message)
 
-class ElementTextTimeout(TNCException):
+class ElementTextTimeout(BaseException):
     def _get_message(self): 
         return self._message
     def _set_message(self, message): 
         self._message = message
     message = property(_get_message, _set_message)
     
-class SearchResultTimeout(TNCException):
+class SearchResultTimeout(BaseException):
     def _get_message(self): 
         return self._message
     def _set_message(self, message): 
         self._message = message
     message = property(_get_message, _set_message)
 
-class InvalidArgumentException(TNCException):
+class InvalidArgumentException(BaseException):
     def _get_message(self): 
         return self._message
     def _set_message(self, message): 
         self._message = message
     message = property(_get_message, _set_message)
 
-class ElementNotPresentException(TNCException):
+class ElementNotPresentException(BaseException):
     def _get_message(self): 
         return self._message
     def _set_message(self, message): 
