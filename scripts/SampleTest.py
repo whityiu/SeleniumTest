@@ -29,14 +29,14 @@ class SampleTest(BaseTestCase.BaseTestCase):
         self.assertEqual("notarealid", bodyTag.get_attribute("id"))
 
     @attr(tags=['deep', 'dashboard', 'python'])    
-    def FailedTest(self):
+    def SearchBoxTest(self):
         driver = self.driver
         driver.get("Http://www.python.org")
         searchBox = driver.find_element_by_id("id-search-field")
         self.assertEqual("search", searchBox.get_attribute("type"))
         
     @attr(tags=['deep', 'dashboard', 'python'])    
-    def FailedTest(self):
+    def FailedSearchBoxTest(self):
         driver = self.driver
         driver.get("Http://www.python.org")
         searchBox = driver.find_element_by_id("id-search-field")
