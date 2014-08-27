@@ -19,6 +19,7 @@ class SampleTest(BaseTestCase.BaseTestCase):
         driver = self.driver
         driver.get("Http://www.python.org")
         bodyTag = driver.find_element_by_tag_name("body")
+        print("Test Setting = " + self.cf.get("Test", "test_setting"))
         self.verifyEqual("homepage", bodyTag.get_attribute("id"))
     
     @attr(tags=['deep', 'dashboard', 'python'])    
