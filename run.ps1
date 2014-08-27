@@ -1,6 +1,20 @@
-C:\PythonEnv\SeleniumTestingFramework\Scripts\Activate.ps1
+Param(
+	[string]$python,
+	[string]$tag,
+	[switch]$debug
+)
 
-python run.py $args
+$activationScript = $python + '\Scripts\Activate.ps1'
 
-#cd C:\PythonEnv\test1\Scripts
+if ($debug) {
+	write-output "Activation Script = $activationScript"
+}
+
+# Activate the Virtual Environment for Test execution
+& $activationScript
+
+# Run the Test discovery & execution script
+python run.py -a tags=$tag
+
+# Deactivate the Virtual Environment
 deactivate
