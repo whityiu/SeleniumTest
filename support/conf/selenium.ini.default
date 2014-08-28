@@ -11,3 +11,4 @@ base_url: http://www.google.com
 [Test]
 test_setting: 1
 test_name: abc
+test_version: 5.0
