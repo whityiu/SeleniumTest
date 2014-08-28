@@ -4,7 +4,7 @@ BaseTestCase
 ===========
 """
 import unittest
-
+import ConfigWrapper
 from selenium import webdriver
 
 import logging
@@ -20,6 +20,7 @@ class BaseTestCase(unittest.TestCase):
         This method runs before every 'test' method
         """
         self.verificationErrors = []
+        self.cf = ConfigWrapper.ConfigWrapper().config
         self.driver = webdriver.Firefox()
         self.base_url = "https://www.mozilla.org/en-US/"
         self.driver.get(self.base_url)

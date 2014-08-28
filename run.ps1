@@ -1,7 +1,8 @@
 Param(
 	[string]$python,
 	[string]$tag,
-	[switch]$debug
+	[switch]$debug,
+	[switch]$s
 )
 
 $activationScript = $python + '\Scripts\Activate.ps1'
@@ -14,7 +15,12 @@ if ($debug) {
 & $activationScript
 
 # Run the Test discovery & execution script
-python run.py -a tags=$tag
+if ($s) {
+	python run.py -a tags=$tag -s
+}
+else {
+	python run.py -a tags=$tag
+}
 
 # Deactivate the Virtual Environment
 deactivate
